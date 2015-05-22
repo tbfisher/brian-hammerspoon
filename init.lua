@@ -33,15 +33,15 @@ app id
 -- common window layouts
 cell50L = { x = 0,  y = 0,  w = 6,  h = 12 }
 cell50R = { x = 6,  y = 0,  w = 6,  h = 12 }
-cell8Center = {
+cells8Center = {
     workScreen = { x = 2,  y = 0,  w = 8,  h = 12 },
     laptopScreen = { x = 2,  y = 0,  w = 8,  h = 12 },
 }
-cellTerminal = {
+cellsTerminal = {
     workScreen = { x = 0,  y = 0,  w = 4,  h = 12 },
     laptopScreen = { x = 0,  y = 0,  w = 4,  h = 12 },
 }
-cellIDE = {
+cellsIDE = {
     workScreen = { x = 2,  y = 0,  w = 10, h = 12 },
     laptopScreen = { x = 2,  y = 0,  w = 10, h = 12 },
 }
@@ -50,7 +50,7 @@ local apps = {}
 apps.airmail = {
     id = 'it.bloop.airmail2',
     name = 'Airmail 2',
-    cell = {
+    cells =  {
         workScreen = cell50L,
         laptopScreen = { x = 0,  y = 0,  w = 8,  h = 12 },
     },
@@ -58,7 +58,7 @@ apps.airmail = {
 apps.dash = {
     id = 'com.kapeli.dash',
     name = 'Dash',
-    cell = {
+    cells =  {
         workScreen = { x = 0,  y = 0,  w = 5,  h = 12 },
         laptopScreen = { x = 0,  y = 0,  w = 7,  h = 12 },
     },
@@ -66,7 +66,7 @@ apps.dash = {
 apps.firefox = {
     id = 'org.mozilla.firefox',
     name = 'Firefox',
-    cell = {
+    cells =  {
         workScreen = { x = 0,  y = 0,  w = 5,  h = 12 },
         laptopScreen = { x = 0,  y = 0,  w = 5,  h = 12 },
     },
@@ -74,15 +74,24 @@ apps.firefox = {
 apps.firefoxDev = {
     id = 'org.mozilla.firefoxdeveloperedition',
     name = 'FirefoxDeveloperEdition',
-    cell = {
+    cells = {
         workScreen = { x = 0,  y = 0,  w = 5,  h = 12 },
         laptopScreen = cell50L,
+    },
+    windows = {
+        {
+            pattern = '^Debugger - ',
+            cells =  {
+                workScreen = { x = 5,  y = 0,  w = 7,  h = 12 },
+                laptopScreen = cell50R,
+            },
+        },
     },
 }
 apps.googleChrome = {
     id = 'com.google.Chrome',
     name = 'Google Chrome',
-    cell = {
+    cells =  {
         workScreen = { x = 5,  y = 0,  w = 6,  h = 12 },
         laptopScreen = { x = 5,  y = 0,  w = 7,  h = 12 },
     },
@@ -90,12 +99,12 @@ apps.googleChrome = {
 apps.hammerspoon = {
     id = 'org.hammerspoon.Hammerspoon',
     name = 'Hammerspoon',
-    cell = cellTerminal,
+    cells =  cellsTerminal,
 }
 apps.iTunes = {
     id = 'com.apple.iTunes',
     name = 'iTunes',
-    cell = {
+    cells =  {
         workScreen = cell50L,
         laptopScreen = { x = 0,  y = 0,  w = 8,  h = 12 },
     },
@@ -103,12 +112,12 @@ apps.iTunes = {
 apps.merge = {
     id = 'com.araxis.merge',
     name = 'Araxis Merge',
-    cell = cell8Center,
+    cells =  cells8Center,
 }
 apps.omniFocus = {
     id = 'com.omnigroup.OmniFocus2',
     name = 'OmniFocus',
-    cell = {
+    cells =  {
         workScreen = { x = 0,  y = 0,  w = 5,  h = 12 },
         laptopScreen = cell50L,
     },
@@ -116,7 +125,7 @@ apps.omniFocus = {
 apps.pathFinder = {
     id = 'com.cocoatech.PathFinder',
     name = 'Path Finder',
-    cell = {
+    cells =  {
         workScreen = { x = 3,  y = 1,  w = 6,  h = 10 },
         laptopScreen = { x = 3,  y = 1,  w = 6,  h = 10 },
     },
@@ -124,17 +133,17 @@ apps.pathFinder = {
 apps.oxygenXML = {
     id = 'ro.sync.exml.Oxygen',
     name = 'Oxygen XML Editor',
-    cell = cellIDE,
+    cells =  cellsIDE,
 }
 apps.phpStorm = {
     id = 'com.jetbrains.PhpStorm',
     name = 'PhpStorm',
-    cell = cellIDE,
+    cells =  cellsIDE,
 }
 apps.phpStormEAP = {
     id = 'com.jetbrains.PhpStorm-EAP',
     name = 'PhpStorm-EAP',
-    cell = {
+    cells =  {
         workScreen = { x = 2,  y = 0,  w = 10, h = 12 },
         laptopScreen = { x = 2,  y = 0,  w = 10, h = 12 },
     },
@@ -142,7 +151,7 @@ apps.phpStormEAP = {
 apps.readKit = {
     id = 'com.webinhq.ReadKit',
     name = 'ReadKit',
-    cell = {
+    cells =  {
         workScreen = { x = 0,  y = 0,  w = 7,  h = 12 },
         laptopScreen = { x = 0,  y = 0,  w = 8,  h = 12 },
     },
@@ -150,7 +159,7 @@ apps.readKit = {
 apps.slack = {
     id = 'com.tinyspeck.slackmacgap',
     name = 'Slack',
-    cell = {
+    cells =  {
         workScreen = { x = 0,  y = 0,  w = 5,  h = 12 },
         laptopScreen = { x = 0,  y = 0,  w = 5,  h = 12 },
     },
@@ -158,7 +167,7 @@ apps.slack = {
 apps.sourceTree = {
     id = 'com.torusknot.SourceTreeNotMAS',
     name = 'SourceTree',
-    cell = {
+    cells =  {
         workScreen = cell50R,
         laptopScreen = cell50R,
     },
@@ -166,7 +175,7 @@ apps.sourceTree = {
 apps.sublimeText = {
     id = 'com.sublimetext.3',
     name = 'Sublime Text',
-    cell = {
+    cells =  {
         workScreen = { x = 4,  y = 0,  w = 5,  h = 12 },
         laptopScreen = { x = 4,  y = 0,  w = 6,  h = 12 },
     },
@@ -174,7 +183,7 @@ apps.sublimeText = {
 apps.terminal = {
     id = 'com.googlecode.iterm2',
     name = 'iTerm',
-    cell = cellTerminal,
+    cells =  cellsTerminal,
 }
 
 function appGetFromName(name)
@@ -203,15 +212,25 @@ hs.grid.GRIDHEIGHT = 12
 
 function rearrangeApp(conf)
     local screen = hs.screen.mainScreen()
-    if (screen:name() == workScreen) then
-        cell = conf.cell.workScreen
-    else
-        cell = conf.cell.laptopScreen
+    local cell = function (cells)
+        if (screen:name() == workScreen) then
+            return cells.workScreen
+        else
+            return cells.laptopScreen
+        end
     end
-    local grid = conf.cell[screen:name()]
     for i,a in ipairs(hs.application.applicationsForBundleID(conf.id)) do
         for j,w in ipairs(a:allWindows()) do
-            hs.grid.set(w, cell, screen)
+            cells = conf.cells
+            if conf.windows then
+                for k,wconf in ipairs(conf.windows) do
+                    if string.find(w:title(), wconf.pattern) then
+                        cells = wconf.cells
+                        break
+                    end
+                end
+            end
+            if cells then hs.grid.set(w, cell(cells), screen) end
         end
     end
 end
